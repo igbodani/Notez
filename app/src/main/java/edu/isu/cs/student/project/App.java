@@ -4,6 +4,8 @@
 package edu.isu.cs.student.project;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -16,36 +18,7 @@ public class App extends Application {
 
     @Override
     public  void start(Stage primaryStage) throws Exception {
-        TextField title = new TextField();
-        title.setAlignment(Pos.TOP_CENTER);
-        title.setMaxWidth(500);
-        TextField bodyNote = new TextField();
-        bodyNote.setAlignment(Pos.BOTTOM_CENTER);
-        bodyNote.setPrefHeight(300);
-        bodyNote.setMaxWidth(500);
-        DatePicker date = new DatePicker();
 
-        Button save = new Button("Save");
-        save.setAlignment(Pos.TOP_RIGHT);
-
-        ListView<Note> noteListView = new ListView<>();
-        noteListView.getItems().addAll(Manager.getNotes());
-
-        VBox box = new VBox();
-        box.getChildren().addAll(title,bodyNote);
-        box.setAlignment(Pos.TOP_CENTER);
-
-        BorderPane pane = new BorderPane();
-        pane.setCenter(box);
-        pane.setLeft(noteListView);
-        pane.setRight(save);
-
-
-
-        Scene scene = new Scene(pane, 600, 400);
-        primaryStage.setTitle("welcome");
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 
     public static void main(String[] args) {

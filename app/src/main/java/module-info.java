@@ -1,6 +1,6 @@
 module Notez.app.main {
     requires javafx.controls;
- //   requires javafx.graphics;
+    requires javafx.graphics;
     requires com.google.gson;
     requires com.google.common;
     requires lombok;

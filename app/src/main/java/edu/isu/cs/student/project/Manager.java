@@ -1,7 +1,7 @@
 package edu.isu.cs.student.project;
 
 
-import javafx.scene.control.DatePicker;
+
 import lombok.extern.java.Log;
 
 import java.util.ArrayList;
@@ -17,7 +17,8 @@ public class Manager {
         return notes;
     }
 
-    public static void addNote(String title, String body, DatePicker date) {
+
+    public static void addNote(String title, String body) {
         Note note = new Note(title, body);
         notes.add(note);
     }
@@ -26,10 +27,10 @@ public class Manager {
         notes.remove(note);
     }
 
-    public static void modifyNote(Note workingNote, String title, String body, Date date) {
+    public static void modifyNote(Note workingNote, String title, String body) {
         workingNote.setTitle(title);
         workingNote.setBody(body);
-        workingNote.setDate(date);
+       // workingNote.setDate(date);
     }
 
     public static int count() {
@@ -48,8 +49,6 @@ public class Manager {
     }
 
     public static void main(String[] args) {
-        Date date = new Date();
-        //  Note note = new Note("jAMES", "HELP OUY ",date );
 
 
         System.out.println(Manager.search("death"));
