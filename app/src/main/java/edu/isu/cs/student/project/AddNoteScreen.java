@@ -35,6 +35,8 @@ public class AddNoteScreen {
             } else {
                 Manager.addNote(title.getText(), description.getText());
                 // noteListView.getItems().addAll(Manager.getNotes());
+            }
+            if (check){
                 stage.setScene(MainScreen.getMainScreen(stage));
             }
 

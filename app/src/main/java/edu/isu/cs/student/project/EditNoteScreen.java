@@ -10,6 +10,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class EditNoteScreen {
 
     public static Scene getEditNoteScreen(Stage stage, Note workingNote) throws Exception{
@@ -38,8 +40,14 @@ public class EditNoteScreen {
                 check = false;
             }
             else{
-                Manager.modifyNote(workingNote, title.getText(), description.getText());
-                stage.setScene(MainScreen.getMainScreen(stage));
+                try {
+                    Manager.modifyNote(workingNote, title.getText(), description.getText());
+
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+                if (check){
+                    stage.setScene(MainScreen.getMainScreen(stage));}
             }
         });
 

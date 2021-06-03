@@ -11,17 +11,46 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
     @Override
-    public  void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws Exception {
+
+        Button register = new Button("Register");
+        register.setOnAction(event -> {
+            try {
+                primaryStage.setScene(RegisterScreen.getRegisterScreen(primaryStage));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        Button login = new Button("Login");
+        login.setOnAction(event -> {
+            try {
+                primaryStage.setScene(LoginScreen.getLoginScreen(primaryStage));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+
+        HBox box = new HBox(20);
+        box.getChildren().addAll(register, login);
+        box.setAlignment(Pos.CENTER);
+
+
+        BorderPane pane = new BorderPane();
+        pane.setCenter(box);
+
+        Scene scene = new Scene(pane, 600, 400);
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
     }
 
-    public static void main(String[] args) {
-        Application.launch(args);
-    }
+
 }

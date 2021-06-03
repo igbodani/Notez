@@ -15,11 +15,11 @@ import javafx.stage.Stage;
 public class MainScreen {
     public static Scene getMainScreen(Stage primaryStage){
 
-
         TextField search = new TextField();
         search.setAlignment(Pos.TOP_CENTER);
         search.setPrefWidth(500);
         search.setPrefHeight(50);
+
 
 
 
@@ -69,7 +69,6 @@ public class MainScreen {
             boolean check = true;
             if(listView.getSelectionModel().getSelectedItem() == null){
                 check = false;
-
             }
             else {
                 try {

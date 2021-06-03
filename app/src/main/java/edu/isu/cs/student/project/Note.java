@@ -1,11 +1,24 @@
 package edu.isu.cs.student.project;
 
 
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
+
 import java.util.Date;
 
 public class Note {
+    @NonNull
+    @Getter
+    @Setter
     private String title;
+    @NonNull
+    @Getter
+    @Setter
     private String body;
+    @NonNull
+    @Getter
+    @Setter
     private Date date;
 
     public Note(String title, String body) {
@@ -13,32 +26,9 @@ public class Note {
         this.body = body;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     @Override
     public String toString() {
         return title;
     }
+
 }

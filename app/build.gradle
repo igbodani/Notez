@@ -10,6 +10,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'io.freefair.lombok' version '5.3.0'
 }
 
 repositories {
@@ -32,6 +33,10 @@ dependencies {
 
     // Gson
     implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'com.google.flogger:flogger:0.5.1'
+    runtime 'com.google.flogger:flogger-system-backend:0.5.1'
+
 }
 
 application {
